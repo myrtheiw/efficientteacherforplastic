@@ -13,7 +13,7 @@ parent, root, root1 = file.parent, file.parents[1], file.parents[2]
 sys.path.append(str(parent))
 
 
-def convert_yolov5_to_efficient(pt_path='', cfg_path='', save_path='', map_path='map.txt'):
+def convert_yolov5_to_efficient(pt_path='/home/myrtheiw/YOLO/yolov5/yolov5l.pt', cfg_path='/home/myrtheiw/YOLO/efficientteacherforplastic/configs/ssod/custom/yolov5l_custom_ssod.yaml', save_path='/home/myrtheiw/YOLO/efficientteacherforplastic/', map_path='map.txt'):
         with open(map_path, 'r') as f:
             content = f.readlines()
         content = [i.strip().split(' ') for i in content]
@@ -49,7 +49,7 @@ def convert_yolov5_to_efficient(pt_path='', cfg_path='', save_path='', map_path=
     
 
 
-def convert_efficient_to_yolov5(efficient_path='',  yolov5_path='', save_path='', map_path='map_v5.txt'):
+def convert_efficient_to_yolov5(efficient_path='',  yolov5_path='', save_path='', map_path='/home/myrtheiw/YOLO/efficientteacher/scripts/mula_convertor/map_v5.txt'):
         with open(map_path, 'r') as f:
             content = f.readlines()
         content = [i.strip().split(' ') for i in content]
@@ -100,4 +100,4 @@ def convert_efficient_to_yolov5(efficient_path='',  yolov5_path='', save_path=''
 
 if __name__ == '__main__':
     # convert_yolov5_to_efficient( 'yolov5s.pt', 'efficientteacher/configs/sup/public/yolov5s_coco.yaml','efficient-yolov5s.pt')
-    convert_efficient_to_yolov5('efficient-yolov5m.pt', yolov5_path='yolov5m.pt', save_path='test.pt')
+    convert_efficient_to_yolov5('/home/myrtheiw/YOLO/efficientteacher/efficient-yolov5l.pt', yolov5_path='/home/myrtheiw/YOLO/yolov5/yolov5l.pt', save_path='test.pt')
